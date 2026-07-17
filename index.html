@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#49243e">
+  <meta name="description" content="Privacy policy and support for DishScribe: Recipe Keeper.">
+  <title>DishScribe Privacy &amp; Support</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #2b1d28;
+      --muted: #6f5d69;
+      --paper: #fffaf4;
+      --paper-strong: #ffffff;
+      --wine: #49243e;
+      --wine-soft: #70415f;
+      --saffron: #e6a93f;
+      --sage: #7d9473;
+      --line: #eaded4;
+      --shadow: 0 22px 70px rgba(66, 34, 54, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 12% 0%, rgba(230, 169, 63, 0.19), transparent 28rem),
+        radial-gradient(circle at 92% 12%, rgba(112, 65, 95, 0.13), transparent 30rem),
+        var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.68;
+    }
+
+    a { color: var(--wine); }
+    a:hover { color: var(--wine-soft); }
+
+    .skip-link {
+      position: fixed;
+      left: 1rem;
+      top: -4rem;
+      z-index: 10;
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      color: white;
+      background: var(--wine);
+    }
+
+    .skip-link:focus { top: 1rem; }
+
+    .shell {
+      width: min(1120px, calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 1.15rem 0;
+      border-bottom: 1px solid rgba(73, 36, 62, 0.10);
+      background: rgba(255, 250, 244, 0.82);
+      backdrop-filter: blur(18px);
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 760;
+      letter-spacing: -0.02em;
+    }
+
+    .mark {
+      width: 2.45rem;
+      height: 2.45rem;
+      display: grid;
+      place-items: center;
+      border-radius: 0.85rem;
+      color: white;
+      background: var(--wine);
+      box-shadow: 0 10px 24px rgba(73, 36, 62, 0.22);
+      font-family: Georgia, serif;
+      font-size: 1.3rem;
+    }
+
+    .language-switcher {
+      display: flex;
+      gap: 0.35rem;
+      padding: 0.3rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.76);
+    }
+
+    .language-switcher button {
+      min-width: 2.8rem;
+      border: 0;
+      border-radius: 999px;
+      padding: 0.48rem 0.72rem;
+      color: var(--muted);
+      background: transparent;
+      font: inherit;
+      font-size: 0.84rem;
+      font-weight: 720;
+      cursor: pointer;
+    }
+
+    .language-switcher button[aria-pressed="true"] {
+      color: white;
+      background: var(--wine);
+    }
+
+    main { padding: 4.5rem 0 3.5rem; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(17rem, 0.65fr);
+      gap: 2rem;
+      align-items: end;
+      margin-bottom: 2.2rem;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.7rem;
+      color: var(--wine-soft);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 14ch;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.7rem, 7vw, 5.6rem);
+      font-weight: 620;
+    }
+
+    .lede {
+      margin: 1.2rem 0 0;
+      max-width: 49rem;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2.2vw, 1.28rem);
+    }
+
+    .date-card {
+      padding: 1.35rem;
+      border: 1px solid rgba(73, 36, 62, 0.12);
+      border-radius: 1.35rem;
+      background: rgba(255, 255, 255, 0.76);
+      box-shadow: var(--shadow);
+    }
+
+    .date-card strong,
+    .date-card span { display: block; }
+    .date-card span { color: var(--muted); font-size: 0.9rem; }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 2.2rem 0 3rem;
+    }
+
+    .summary-card {
+      min-height: 10rem;
+      padding: 1.4rem;
+      border: 1px solid var(--line);
+      border-radius: 1.3rem;
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .summary-card .number {
+      display: inline-grid;
+      width: 2rem;
+      height: 2rem;
+      place-items: center;
+      border-radius: 0.7rem;
+      color: white;
+      background: var(--wine);
+      font-weight: 800;
+    }
+
+    .summary-card h2 { margin: 1rem 0 0.4rem; font-size: 1.05rem; }
+    .summary-card p { margin: 0; color: var(--muted); font-size: 0.94rem; }
+
+    .content {
+      display: grid;
+      grid-template-columns: 14rem minmax(0, 1fr);
+      gap: 2rem;
+      align-items: start;
+    }
+
+    nav {
+      position: sticky;
+      top: 6rem;
+      padding: 1.1rem;
+      border: 1px solid var(--line);
+      border-radius: 1.2rem;
+      background: rgba(255, 255, 255, 0.68);
+    }
+
+    nav strong { font-size: 0.83rem; letter-spacing: 0.08em; text-transform: uppercase; }
+    nav a { display: block; margin-top: 0.75rem; color: var(--muted); text-decoration: none; font-size: 0.9rem; }
+    nav a:hover { color: var(--wine); }
+
+    article {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 1.5rem;
+      background: var(--paper-strong);
+      box-shadow: var(--shadow);
+    }
+
+    section {
+      padding: 2rem clamp(1.25rem, 4vw, 3rem);
+      border-bottom: 1px solid var(--line);
+      scroll-margin-top: 6.5rem;
+    }
+
+    section:last-child { border-bottom: 0; }
+    section h2 { margin: 0 0 1rem; font-size: clamp(1.45rem, 3vw, 2rem); }
+    section h3 { margin: 1.5rem 0 0.45rem; font-size: 1.06rem; }
+    section p { margin: 0.65rem 0; }
+    section ul { margin: 0.75rem 0; padding-left: 1.25rem; }
+
+    .note {
+      margin-top: 1rem;
+      padding: 1rem 1.1rem;
+      border-left: 4px solid var(--saffron);
+      border-radius: 0.3rem 0.9rem 0.9rem 0.3rem;
+      background: #fff6e5;
+    }
+
+    .support-card {
+      margin-top: 1rem;
+      padding: 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: 1rem;
+      background: #fffaf6;
+    }
+
+    .contact-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.65rem;
+      padding: 0.78rem 1rem;
+      border-radius: 0.8rem;
+      color: white;
+      background: var(--wine);
+      text-decoration: none;
+      font-weight: 760;
+    }
+
+    footer {
+      padding: 1.5rem 0 3rem;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.86rem;
+    }
+
+    [hidden] { display: none !important; }
+
+    @media (max-width: 760px) {
+      .hero, .content { grid-template-columns: 1fr; }
+      .summary-grid { grid-template-columns: 1fr; }
+      nav { position: static; display: none; }
+      main { padding-top: 3rem; }
+      .topbar { align-items: flex-start; }
+      .brand-name { display: none; }
+      .language-switcher button { min-width: 2.5rem; padding-inline: 0.55rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header>
+    <div class="shell topbar">
+      <div class="brand" aria-label="DishScribe">
+        <span class="mark" aria-hidden="true">D</span>
+        <span class="brand-name">DishScribe: Recipe Keeper</span>
+      </div>
+      <div class="language-switcher" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="ko" aria-pressed="false">한국어</button>
+        <button type="button" data-lang="es" aria-pressed="false">ES</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content" class="shell">
+    <div class="locale-panel" data-panel="en">
+      <div class="hero">
+        <div>
+          <p class="eyebrow">Privacy &amp; support</p>
+          <h1>Your recipes stay yours.</h1>
+          <p class="lede">DishScribe is a local recipe keeper for organizing, scaling, and cooking from recipes on your Android device.</p>
+        </div>
+        <div class="date-card">
+          <span>Effective and last updated</span>
+          <strong>July 17, 2026</strong>
+        </div>
+      </div>
+
+      <div class="summary-grid" aria-label="Privacy summary">
+        <div class="summary-card"><span class="number">1</span><h2>No account</h2><p>DishScribe does not require sign-in or a cloud profile.</p></div>
+        <div class="summary-card"><span class="number">2</span><h2>No tracking</h2><p>The signed release contains no advertising SDK, analytics SDK, or cross-app tracking.</p></div>
+        <div class="summary-card"><span class="number">3</span><h2>Local control</h2><p>Recipes, selected photos, and backups are handled through storage you control.</p></div>
+      </div>
+
+      <div class="content">
+        <nav aria-label="English page sections">
+          <strong>On this page</strong>
+          <a href="#en-overview">Overview</a>
+          <a href="#en-data">Data on your device</a>
+          <a href="#en-network">Network and third parties</a>
+          <a href="#en-permissions">Permissions</a>
+          <a href="#en-retention">Retention and deletion</a>
+          <a href="#en-children">Children</a>
+          <a href="#en-support">Support</a>
+          <a href="#en-changes">Changes</a>
+        </nav>
+        <article>
+          <section id="en-overview">
+            <h2>Overview</h2>
+            <p>This policy explains how DishScribe: Recipe Keeper handles information. The app is designed for local recipe creation, editing, search, tags, favorites, serving-size scaling, and step-by-step cooking mode.</p>
+            <p>DishScribe does not require an account and works without an Internet connection. This policy was reconciled with the signed Android release for package <code>com.evmodu.dishscribe</code>, version 1.0.0 (1).</p>
+          </section>
+
+          <section id="en-data">
+            <h2>Data handled on your device</h2>
+            <h3>Recipes and preferences</h3>
+            <p>Recipe titles, ingredients, directions, notes, tags, favorites, serving values, and app preferences are stored in the app's private local storage.</p>
+            <h3>Optional recipe photos</h3>
+            <p>When you choose a photo with Android's system Photo Picker, DishScribe receives access only to the item you select. The app may copy that selected photo into its private local storage so the recipe remains available inside DishScribe.</p>
+            <h3>Manual backup and restore</h3>
+            <p>You can choose a destination or backup file through Android's system document picker. DishScribe writes or reads a ZIP archive only after your action. You are responsible for where that archive is stored, copied, or shared after export.</p>
+          </section>
+
+          <section id="en-network">
+            <h2>Network, advertising, and third parties</h2>
+            <p>The signed release does not declare Internet access and has no account service, advertising, analytics, or developer-operated server. DishScribe does not sell or share recipe data with advertisers or data brokers.</p>
+            <p>This support page does not intentionally load advertising or analytics scripts. A hosting provider may process standard request metadata under its own terms when the page is deployed.</p>
+          </section>
+
+          <section id="en-permissions">
+            <h2>System access and permissions</h2>
+            <ul>
+              <li><strong>Photos:</strong> selected through Android's Photo Picker; the signed release does not request broad photo-library or storage access.</li>
+              <li><strong>Files:</strong> selected through Android's system document picker for user-initiated ZIP backup and restore.</li>
+              <li><strong>Camera, microphone, location, contacts, and notifications:</strong> not requested by the signed release.</li>
+              <li><strong>Internet:</strong> not requested by the signed release.</li>
+            </ul>
+            <div class="note"><strong>Release verification:</strong> the signed release sets Android OS backup to disabled. Its backup and data-extraction rules exclude app files, databases, preferences, and external app storage from cloud backup and device-to-device transfer. Manual ZIP export and restore remain available only when you choose a file or destination.</div>
+          </section>
+
+          <section id="en-retention">
+            <h2>Retention, deletion, and security</h2>
+            <p>Local recipe data remains on the device until you delete a recipe, clear the app's data, or uninstall the app. An exported ZIP remains wherever you placed it until you delete it there.</p>
+            <p>DishScribe limits exposure by keeping app data local and avoiding network transfer. Device access controls and the security of any exported archive remain important. Keep backups only in locations you trust.</p>
+          </section>
+
+          <section id="en-children">
+            <h2>Children's privacy</h2>
+            <p>DishScribe is a general recipe utility and is not directed to children under 13. It has no account, social feature, public profile, or developer-operated collection of personal information.</p>
+          </section>
+
+          <section id="en-support">
+            <h2>Support</h2>
+            <div class="support-card">
+              <h3>Photo not available?</h3>
+              <p>Open the recipe editor and choose the photo again with Android's Photo Picker. DishScribe does not request access to your full library.</p>
+              <h3>Restoring a backup?</h3>
+              <p>Choose the ZIP archive through the system document picker and review the in-app confirmation before replacing local data. Keep the original archive until the restore is confirmed.</p>
+              <h3>Deleting your data?</h3>
+              <p>Delete individual recipes in the app, or use Android system settings to clear all DishScribe app data. Delete exported ZIP files separately from the location where you saved them.</p>
+              <h3>Need help?</h3>
+              <p>Include your Android version, DishScribe version, and a short description of what happened. Do not email private recipes or backup archives unless specifically needed and you are comfortable doing so.</p>
+              <a class="contact-button" href="mailto:devjang.apps@gmail.com?subject=DishScribe%20Support">Email support</a>
+            </div>
+          </section>
+
+          <section id="en-changes">
+            <h2>Changes and contact</h2>
+            <p>If DishScribe's behavior or data handling changes, this page will be updated before the corresponding release where required. The effective date at the top will show the latest revision.</p>
+            <p>Privacy and support contact: <a href="mailto:devjang.apps@gmail.com">devjang.apps@gmail.com</a>.</p>
+          </section>
+        </article>
+      </div>
+    </div>
+
+    <div class="locale-panel" data-panel="ko" hidden>
+      <div class="hero">
+        <div>
+          <p class="eyebrow">개인정보처리방침 및 지원</p>
+          <h1>내 레시피는 내 기기에.</h1>
+          <p class="lede">DishScribe는 Android 기기에서 레시피를 정리하고 분량을 조절하며 요리 순서를 확인하는 로컬 레시피 보관함입니다.</p>
+        </div>
+        <div class="date-card"><span>시행일 및 최종 업데이트</span><strong>2026년 7월 17일</strong></div>
+      </div>
+
+      <div class="summary-grid" aria-label="개인정보 요약">
+        <div class="summary-card"><span class="number">1</span><h2>계정 없음</h2><p>로그인이나 클라우드 프로필이 필요하지 않습니다.</p></div>
+        <div class="summary-card"><span class="number">2</span><h2>추적 없음</h2><p>최종 서명 출시 버전에는 광고 SDK, 분석 SDK, 앱 간 추적이 없습니다.</p></div>
+        <div class="summary-card"><span class="number">3</span><h2>로컬 제어</h2><p>레시피, 선택한 사진, 백업은 사용자가 제어하는 저장 공간에서 처리됩니다.</p></div>
+      </div>
+
+      <div class="content">
+        <nav aria-label="한국어 페이지 목차">
+          <strong>목차</strong>
+          <a href="#ko-overview">개요</a><a href="#ko-data">기기에서 처리하는 데이터</a><a href="#ko-network">네트워크 및 제3자</a><a href="#ko-permissions">권한</a><a href="#ko-retention">보관 및 삭제</a><a href="#ko-children">아동</a><a href="#ko-support">지원</a><a href="#ko-changes">변경 및 문의</a>
+        </nav>
+        <article>
+          <section id="ko-overview"><h2>개요</h2><p>이 방침은 DishScribe: Recipe Keeper가 정보를 처리하는 방식을 설명합니다. 앱은 레시피 작성·편집·검색, 태그, 즐겨찾기, 분량 조절, 단계별 요리 모드를 로컬에서 제공합니다.</p><p>계정이 필요하지 않으며 인터넷 연결 없이 작동합니다. 이 방침은 패키지 <code>com.evmodu.dishscribe</code>, 버전 1.0.0 (1)의 최종 서명 Android 출시 버전과 대조해 확인했습니다.</p></section>
+          <section id="ko-data"><h2>기기에서 처리하는 데이터</h2><h3>레시피와 설정</h3><p>제목, 재료, 조리 순서, 메모, 태그, 즐겨찾기, 분량 값, 앱 설정은 앱 전용 로컬 저장소에 저장됩니다.</p><h3>선택한 레시피 사진</h3><p>Android 시스템 사진 선택 도구에서 사진을 고르면 DishScribe는 사용자가 선택한 항목에만 접근합니다. 앱 안에서 계속 사용할 수 있도록 선택한 사진을 앱 전용 저장소로 복사할 수 있습니다.</p><h3>수동 백업과 복원</h3><p>Android 시스템 문서 선택 도구에서 저장 위치나 백업 파일을 직접 고릅니다. DishScribe는 사용자의 명시적인 동작 후에만 ZIP 파일을 쓰거나 읽습니다. 내보낸 파일을 이후 어디에 저장·복사·공유할지는 사용자가 관리합니다.</p></section>
+          <section id="ko-network"><h2>네트워크, 광고 및 제3자</h2><p>최종 서명 출시 버전은 인터넷 접근 권한을 선언하지 않으며 계정 서비스, 광고, 분석, 개발자 운영 서버가 없습니다. DishScribe는 레시피 데이터를 광고주나 데이터 중개업체에 판매하거나 공유하지 않습니다.</p><p>이 지원 페이지는 광고나 분석 스크립트를 의도적으로 불러오지 않습니다. 배포 후 호스팅 제공업체는 자체 약관에 따라 표준 요청 정보를 처리할 수 있습니다.</p></section>
+          <section id="ko-permissions"><h2>시스템 접근 및 권한</h2><ul><li><strong>사진:</strong> Android 사진 선택 도구로 선택하며 최종 서명 출시 버전은 전체 사진 라이브러리 또는 광범위한 저장소 접근을 요청하지 않습니다.</li><li><strong>파일:</strong> 사용자가 시작한 ZIP 백업·복원에 Android 시스템 문서 선택 도구를 사용합니다.</li><li><strong>카메라, 마이크, 위치, 연락처, 알림:</strong> 최종 서명 출시 버전에서 요청하지 않습니다.</li><li><strong>인터넷:</strong> 최종 서명 출시 버전에서 요청하지 않습니다.</li></ul><div class="note"><strong>출시 검증:</strong> 최종 서명 출시 버전은 Android OS 백업을 비활성화합니다. 백업 및 데이터 추출 규칙은 앱 파일, 데이터베이스, 설정, 외부 앱 저장소를 클라우드 백업과 기기 간 전송에서 제외합니다. 수동 ZIP 내보내기와 복원은 사용자가 파일이나 위치를 직접 선택한 경우에만 사용할 수 있습니다.</div></section>
+          <section id="ko-retention"><h2>보관, 삭제 및 보안</h2><p>로컬 데이터는 레시피를 삭제하거나 Android 설정에서 앱 데이터를 지우거나 앱을 제거할 때까지 기기에 남습니다. 내보낸 ZIP은 사용자가 저장한 위치에서 별도로 삭제할 때까지 남습니다.</p><p>앱은 데이터를 로컬에 두고 네트워크 전송을 피함으로써 노출을 줄입니다. 기기 잠금과 내보낸 백업의 보안은 사용자 책임도 중요하므로 신뢰하는 위치에만 백업하세요.</p></section>
+          <section id="ko-children"><h2>아동의 개인정보</h2><p>DishScribe는 일반 레시피 도구이며 만 13세 미만 아동을 대상으로 설계되지 않았습니다. 계정, 소셜 기능, 공개 프로필, 개발자 운영 개인정보 수집 기능이 없습니다.</p></section>
+          <section id="ko-support"><h2>지원</h2><div class="support-card"><h3>사진을 사용할 수 없나요?</h3><p>레시피 편집기에서 Android 사진 선택 도구로 사진을 다시 선택하세요. 전체 사진 라이브러리 접근은 요청하지 않습니다.</p><h3>백업을 복원하려면</h3><p>시스템 문서 선택 도구에서 ZIP을 고르고, 로컬 데이터를 교체하기 전 앱 확인 화면을 검토하세요. 복원이 확인될 때까지 원본 ZIP을 보관하세요.</p><h3>데이터를 삭제하려면</h3><p>앱에서 개별 레시피를 삭제하거나 Android 설정에서 DishScribe 앱 데이터를 모두 지울 수 있습니다. 내보낸 ZIP은 저장한 위치에서 별도로 삭제해야 합니다.</p><h3>도움이 필요하면</h3><p>Android 버전, DishScribe 버전, 문제 상황을 간단히 적어 주세요. 꼭 필요하고 동의한 경우가 아니라면 개인 레시피나 백업 파일을 이메일로 보내지 마세요.</p><a class="contact-button" href="mailto:devjang.apps@gmail.com?subject=DishScribe%20Support">이메일 문의</a></div></section>
+          <section id="ko-changes"><h2>변경 및 문의</h2><p>앱 동작이나 데이터 처리 방식이 변경되면 필요한 경우 해당 버전 출시 전에 이 페이지를 갱신하고 위의 시행일을 변경합니다.</p><p>개인정보 및 지원 문의: <a href="mailto:devjang.apps@gmail.com">devjang.apps@gmail.com</a></p></section>
+        </article>
+      </div>
+    </div>
+
+    <div class="locale-panel" data-panel="es" hidden>
+      <div class="hero">
+        <div>
+          <p class="eyebrow">Privacidad y asistencia</p>
+          <h1>Tus recetas siguen siendo tuyas.</h1>
+          <p class="lede">DishScribe es un recetario local para organizar, ajustar y cocinar recetas en tu dispositivo Android.</p>
+        </div>
+        <div class="date-card"><span>Entrada en vigor y última actualización</span><strong>17 de julio de 2026</strong></div>
+      </div>
+
+      <div class="summary-grid" aria-label="Resumen de privacidad">
+        <div class="summary-card"><span class="number">1</span><h2>Sin cuenta</h2><p>No necesitas iniciar sesión ni crear un perfil en la nube.</p></div>
+        <div class="summary-card"><span class="number">2</span><h2>Sin rastreo</h2><p>La versión final firmada no incluye SDK publicitario, analítica ni rastreo entre aplicaciones.</p></div>
+        <div class="summary-card"><span class="number">3</span><h2>Control local</h2><p>Las recetas, fotos elegidas y copias se gestionan en almacenamiento bajo tu control.</p></div>
+      </div>
+
+      <div class="content">
+        <nav aria-label="Secciones en español">
+          <strong>En esta página</strong>
+          <a href="#es-overview">Resumen</a><a href="#es-data">Datos en el dispositivo</a><a href="#es-network">Red y terceros</a><a href="#es-permissions">Permisos</a><a href="#es-retention">Conservación y borrado</a><a href="#es-children">Menores</a><a href="#es-support">Asistencia</a><a href="#es-changes">Cambios y contacto</a>
+        </nav>
+        <article>
+          <section id="es-overview"><h2>Resumen</h2><p>Esta política explica cómo DishScribe: Recipe Keeper maneja la información. La aplicación permite crear, editar y buscar recetas, usar etiquetas y favoritos, ajustar porciones y seguir un modo de cocina paso a paso de forma local.</p><p>No requiere cuenta y funciona sin conexión a Internet. Esta política se contrastó con la versión final firmada de Android para el paquete <code>com.evmodu.dishscribe</code>, versión 1.0.0 (1).</p></section>
+          <section id="es-data"><h2>Datos manejados en tu dispositivo</h2><h3>Recetas y preferencias</h3><p>Los títulos, ingredientes, pasos, notas, etiquetas, favoritos, valores de porciones y preferencias se guardan en el almacenamiento local privado de la aplicación.</p><h3>Fotos opcionales</h3><p>Cuando eliges una foto con el selector de fotos de Android, DishScribe solo recibe acceso al elemento elegido. Puede copiar esa foto al almacenamiento privado de la aplicación para mantenerla disponible dentro de la receta.</p><h3>Copia y restauración manual</h3><p>Eliges el destino o el archivo mediante el selector de documentos de Android. DishScribe solo escribe o lee un ZIP después de tu acción. Tú decides dónde se guarda, copia o comparte el archivo exportado.</p></section>
+          <section id="es-network"><h2>Red, publicidad y terceros</h2><p>La versión final firmada no declara acceso a Internet y no incluye servicio de cuentas, publicidad, analítica ni servidor operado por el desarrollador. DishScribe no vende ni comparte datos de recetas con anunciantes o intermediarios de datos.</p><p>Esta página de asistencia no carga intencionadamente publicidad ni scripts de analítica. Al publicarse, el proveedor de alojamiento puede procesar metadatos estándar de la solicitud según sus propias condiciones.</p></section>
+          <section id="es-permissions"><h2>Acceso del sistema y permisos</h2><ul><li><strong>Fotos:</strong> se eligen con el selector de fotos de Android; la versión final firmada no pide acceso amplio a la fototeca o al almacenamiento.</li><li><strong>Archivos:</strong> se eligen con el selector de documentos para copias ZIP iniciadas por el usuario.</li><li><strong>Cámara, micrófono, ubicación, contactos y notificaciones:</strong> la versión final firmada no solicita estos permisos.</li><li><strong>Internet:</strong> la versión final firmada no solicita este permiso.</li></ul><div class="note"><strong>Verificación de la versión:</strong> la versión final firmada desactiva la copia de seguridad del sistema Android. Las reglas de copia y extracción excluyen los archivos, bases de datos, preferencias y almacenamiento externo de la aplicación de la copia en la nube y de la transferencia entre dispositivos. La exportación y restauración ZIP manual solo se activan cuando eliges un archivo o destino.</div></section>
+          <section id="es-retention"><h2>Conservación, borrado y seguridad</h2><p>Los datos locales permanecen en el dispositivo hasta que eliminas una receta, borras los datos de la aplicación o desinstalas DishScribe. Un ZIP exportado permanece donde lo guardaste hasta que lo elimines allí.</p><p>DishScribe reduce la exposición al mantener los datos locales y evitar su transferencia por red. Los controles de acceso del dispositivo y la seguridad de los ZIP exportados siguen siendo importantes. Guarda copias solo en lugares de confianza.</p></section>
+          <section id="es-children"><h2>Privacidad de menores</h2><p>DishScribe es una utilidad general de recetas y no está dirigida a menores de 13 años. No tiene cuenta, funciones sociales, perfil público ni recopilación de información personal operada por el desarrollador.</p></section>
+          <section id="es-support"><h2>Asistencia</h2><div class="support-card"><h3>¿No aparece una foto?</h3><p>Abre el editor y vuelve a elegirla con el selector de fotos de Android. DishScribe no solicita acceso a toda tu fototeca.</p><h3>¿Quieres restaurar una copia?</h3><p>Elige el ZIP con el selector de documentos y revisa la confirmación de la aplicación antes de sustituir los datos locales. Conserva el original hasta confirmar la restauración.</p><h3>¿Quieres borrar tus datos?</h3><p>Elimina recetas en la aplicación o borra todos los datos de DishScribe desde los ajustes de Android. Los ZIP exportados deben borrarse por separado donde los guardaste.</p><h3>¿Necesitas ayuda?</h3><p>Incluye la versión de Android, la versión de DishScribe y una descripción breve. No envíes recetas privadas ni archivos de copia salvo que sea necesario y aceptes hacerlo.</p><a class="contact-button" href="mailto:devjang.apps@gmail.com?subject=DishScribe%20Support">Enviar correo</a></div></section>
+          <section id="es-changes"><h2>Cambios y contacto</h2><p>Si cambia el comportamiento o el manejo de datos de DishScribe, esta página se actualizará antes de la versión correspondiente cuando sea necesario. La fecha superior indicará la revisión más reciente.</p><p>Contacto de privacidad y asistencia: <a href="mailto:devjang.apps@gmail.com">devjang.apps@gmail.com</a>.</p></section>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="shell">DishScribe: Recipe Keeper · Privacy &amp; Support · devjang.apps@gmail.com</footer>
+
+  <script>
+    (() => {
+      const buttons = [...document.querySelectorAll('[data-lang]')];
+      const panels = [...document.querySelectorAll('[data-panel]')];
+      const supported = new Set(buttons.map((button) => button.dataset.lang));
+
+      function selectLanguage(language) {
+        const selected = supported.has(language) ? language : 'en';
+        document.documentElement.lang = selected;
+        buttons.forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.lang === selected)));
+        panels.forEach((panel) => { panel.hidden = panel.dataset.panel !== selected; });
+      }
+
+      buttons.forEach((button) => button.addEventListener('click', () => selectLanguage(button.dataset.lang)));
+      const requested = new URLSearchParams(window.location.search).get('lang');
+      selectLanguage(requested || 'en');
+    })();
+  </script>
+</body>
+</html>
